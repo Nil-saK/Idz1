@@ -1,0 +1,19 @@
+doctype html
+html(lang="ua") 
+    head
+        meta(charset="utf-8")
+        title Fifteen
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/css/reset.css")
+        link(rel="stylesheet" href="/css/index.css")
+    body
+        - var values = new Array(16).fill(0).map((item, index) => index + 1); /** Створюю цикл для масиву гри*/
+        .page
+            h1 Гра в «П'ятнашки»
+            .game#game
+                .fifteen#fifteen
+                    each val in values
+                        button.item(data-matrix-id=val)
+                            span.itemVal= val
+                button.button#shuffle Перемішати
+        script(src="/js/index.js")
